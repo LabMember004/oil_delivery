@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('delivery', function (Blueprint $table) {
+        Schema::create('driver_tables', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('user_id');
-            $table->string('product_type');
-            $table->string('pickup_location');
-            $table->string('weight');
-            $table->date('pickup_date');
+            $table->string('name');
+            $table->integer('age');
+            $table->string('gender');
+            $table->string('nationality');
+            $table->string('car_number');
             
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('delivery');
+        Schema::dropIfExists('driver_tables');
     }
 };
